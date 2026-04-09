@@ -1,0 +1,140 @@
+.services-wrapper {
+  padding: 60px 80px;
+  background-color: white;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.service-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.service-item:hover {
+  transform: translateY(-4px);
+}
+
+.service-circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: 14px;
+}
+
+.service-circle img {
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+}
+
+.service-label {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+  color: #222;
+  margin: 0;
+  line-height: 1.4;
+}
+
+
+@media (max-width: 1280px) {
+  .services-wrapper {
+    padding: 60px 40px;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 30px 16px;
+  }
+
+  .service-circle {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+
+@media (max-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 36px 20px;
+  }
+
+  .service-circle {
+    width: 110px;
+    height: 110px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .services-wrapper {
+    padding: 40px 24px;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px 16px;
+  }
+
+  .service-circle {
+    width: 100px;
+    height: 100px;
+  }
+
+  .service-label {
+    font-size: 13px;
+  }
+}
+
+
+@media (max-width: 540px) {
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px 12px;
+  }
+
+  .service-circle {
+    width: 85px;
+    height: 85px;
+  }
+
+  .service-label {
+    font-size: 12px;
+  }
+}
+
+
+@media (max-width: 380px) {
+  .services-wrapper {
+    padding: 30px 16px;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px 16px;
+  }
+
+  .service-circle {
+    width: 90px;
+    height: 90px;
+  }
+
+  .service-label {
+    font-size: 12px;
+  }
+}
