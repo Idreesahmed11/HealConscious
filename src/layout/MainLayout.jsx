@@ -3,10 +3,12 @@ import { Outlet } from "react-router-dom";
 import TopBar from "../components/Navbar/TopBar";
 import MainNavbar from "../components/Navbar/MainNavbar";
 import Footer from "../components/Footer"; // ✅ Footer import karo
+import ScrollToTop from "../components/ScrollToTop";
 
 const MainLayout = () => {
   return (
     <div style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
+         <ScrollToTop />
       <TopBar />
       <MainNavbar />
 

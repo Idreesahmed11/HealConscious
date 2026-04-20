@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import paymentImg from '../assets/payment.png' 
+import paymentImg from '../assets/payment.png'
 
-// ── Icons ──
 const IconLocation = () => (
   <svg width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
     <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
@@ -24,52 +23,50 @@ const IconMail = () => (
 )
 
 const quickLinks = [
-  { label: 'Home', href: '/' },
-  { label: 'About Us', href: '/about' },
-  { label: 'What is Careox?', href: '/careox' },
-  { label: 'Shop', href: '/shop' },
-  { label: 'Contact', href: '/contact' },
+  { label: 'Home',             href: '/'        },
+  { label: 'About Us',         href: '/About'   },
+  { label: 'What is Careox?',  href: '/Careox'  },
+  { label: 'Shop',             href: '/store'   },
+  { label: 'Contact',          href: '/Connect' },
 ]
 
 const policies = [
-  { label: 'Privacy Policy', href: '/privacy-policy' },
-  { label: 'Terms & Conditions', href: '/terms' },
-  { label: 'Refund Policy', href: '/refund-policy' },
-  { label: 'Shipping Policy', href: '/shipping-policy' },
+  { label: 'Privacy Policy',    href: '/privacy-policy'    },
+  { label: 'Terms & Conditions',href: '/terms'             },
+  { label: 'Refund Policy',     href: '/refund-policy'     },
+  { label: 'Shipping Policy',   href: '/shipping-policy'   },
+  { label: 'Healing Ambassador',href: '/healing-ambassador'},
 ]
 
 function Footer() {
   const [email, setEmail] = useState('')
 
-  const isMobile = window.innerWidth < 768
+  const isMobile      = window.innerWidth < 768
   const isSmallMobile = window.innerWidth < 480
-  const footerColumns = isMobile ? '1fr' : 'repeat(4, 1fr)'
 
   return (
     <div>
       <footer
         style={{
-          borderTop: "0.5px solid #e0ddd8",
-          marginTop: "2.5rem",
-          padding: isMobile ? "2rem 1rem 1.25rem" : "2.5rem 1.5rem 1.5rem",
-          background: "#fff",
+          borderTop: '0.5px solid #e0ddd8',
+          marginTop: '2.5rem',
+          padding: isMobile ? '2rem 1rem 1.25rem' : '2.5rem 1.5rem 1.5rem',
+          background: '#fff',
         }}
       >
         <div
           style={{
-            display: "grid",
-            gridTemplateColumns: footerColumns,
-            gap: isMobile ? "1.5rem" : "2rem",
+            display: 'grid',
+            gridTemplateColumns: isMobile ? '1fr' : 'repeat(4, 1fr)',
+            gap: isMobile ? '1.5rem' : '2rem',
           }}
         >
-
-      
+          {/* Newsletter */}
           <div>
-            <div style={{ width: 28, height: 28, background: "#ddd", borderRadius: 4, marginBottom: 8 }} />
-            <p style={{ fontSize: 13, fontWeight: 700, color: "#111", marginBottom: 4 }}>
+            <p style={{ fontSize: 13, fontWeight: 700, color: '#111', marginBottom: 4 }}>
               Sign Up For Our Newsletter
             </p>
-            <p style={{ fontSize: 12, color: "#777", marginBottom: 14, lineHeight: 1.6 }}>
+            <p style={{ fontSize: 12, color: '#777', marginBottom: 14, lineHeight: 1.6 }}>
               Get updates and offers in your inbox.
             </p>
             <input
@@ -78,40 +75,40 @@ function Footer() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               style={{
-                width: "100%", padding: "8px 10px",
-                border: "0.5px solid #bbb", borderRadius: 3,
-                fontSize: 12, color: "#222", background: "#fff",
-                outline: "none", marginBottom: 8, boxSizing: "border-box",
+                width: '100%', padding: '8px 10px',
+                border: '0.5px solid #bbb', borderRadius: 3,
+                fontSize: 12, color: '#222', background: '#fff',
+                outline: 'none', marginBottom: 8, boxSizing: 'border-box',
               }}
             />
             <button
               style={{
-                width: "100%", padding: "9px",
-                background: "#222", color: "#fff",
+                width: '100%', padding: '9px',
+                background: '#222', color: '#fff',
                 fontSize: 12, fontWeight: 600,
-                border: "none", borderRadius: 3,
-                cursor: "pointer", letterSpacing: "0.06em",
+                border: 'none', borderRadius: 3,
+                cursor: 'pointer', letterSpacing: '0.06em',
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.background = "#444")}
-              onMouseLeave={(e) => (e.currentTarget.style.background = "#222")}
+              onMouseEnter={(e) => (e.currentTarget.style.background = '#444')}
+              onMouseLeave={(e) => (e.currentTarget.style.background = '#222')}
             >
               SUBSCRIBE
             </button>
           </div>
 
-        
+          {/* Quick Links */}
           <div>
-            <p style={{ fontSize: 13, fontWeight: 700, color: "#111", marginBottom: 14 }}>
+            <p style={{ fontSize: 13, fontWeight: 700, color: '#111', marginBottom: 14 }}>
               Quick Links
             </p>
-            <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: 9, padding: 0, margin: 0 }}>
+            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 9, padding: 0, margin: 0 }}>
               {quickLinks.map((l) => (
                 <li key={l.label}>
                   <Link
                     to={l.href}
-                    style={{ fontSize: 12, color: "#666", textDecoration: "none", transition: "color 0.15s" }}
-                    onMouseEnter={(e) => (e.currentTarget.style.color = "#111")}
-                    onMouseLeave={(e) => (e.currentTarget.style.color = "#666")}
+                    style={{ fontSize: 12, color: '#666', textDecoration: 'none', transition: 'color 0.15s' }}
+                    onMouseEnter={(e) => (e.currentTarget.style.color = '#111')}
+                    onMouseLeave={(e) => (e.currentTarget.style.color = '#666')}
                   >
                     {l.label}
                   </Link>
@@ -120,19 +117,19 @@ function Footer() {
             </ul>
           </div>
 
-          
+          {/* Policies */}
           <div>
-            <p style={{ fontSize: 13, fontWeight: 700, color: "#111", marginBottom: 14 }}>
+            <p style={{ fontSize: 13, fontWeight: 700, color: '#111', marginBottom: 14 }}>
               Our Policy
             </p>
-            <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: 9, padding: 0, margin: 0 }}>
+            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 9, padding: 0, margin: 0 }}>
               {policies.map((l) => (
                 <li key={l.label}>
                   <Link
                     to={l.href}
-                    style={{ fontSize: 12, color: "#666", textDecoration: "none", transition: "color 0.15s" }}
-                    onMouseEnter={(e) => (e.currentTarget.style.color = "#111")}
-                    onMouseLeave={(e) => (e.currentTarget.style.color = "#666")}
+                    style={{ fontSize: 12, color: '#666', textDecoration: 'none', transition: 'color 0.15s' }}
+                    onMouseEnter={(e) => (e.currentTarget.style.color = '#111')}
+                    onMouseLeave={(e) => (e.currentTarget.style.color = '#666')}
                   >
                     {l.label}
                   </Link>
@@ -141,49 +138,47 @@ function Footer() {
             </ul>
           </div>
 
-        
+          {/* Contact */}
           <div>
-            <p style={{ fontSize: 13, fontWeight: 700, color: "#111", marginBottom: 14 }}>
+            <p style={{ fontSize: 13, fontWeight: 700, color: '#111', marginBottom: 14 }}>
               Contact Us
             </p>
             {[
-              { Icon: IconLocation, text: "Add: 111B S Gov Avenue, STE 7126 19904 Dover, DE" },
-              { Icon: IconPhone, text: "Tel: +1 (012) 345-6789 - Whatsapp" },
-              { Icon: IconMail, text: "healconscious.com" },
+              { Icon: IconLocation, text: 'Add: 111B S Gov Avenue, STE 7126 19904 Dover, DE' },
+              { Icon: IconPhone,    text: 'Tel: +1 (012) 345-6789 - Whatsapp'                },
+              { Icon: IconMail,     text: 'healconscious.com'                                },
             ].map(({ Icon, text }) => (
-              <div key={text} style={{ display: "flex", gap: 8, alignItems: "flex-start", marginBottom: 12 }}>
-                <span style={{ color: "#777", marginTop: 2, flexShrink: 0 }}>
+              <div key={text} style={{ display: 'flex', gap: 8, alignItems: 'flex-start', marginBottom: 12 }}>
+                <span style={{ color: '#777', marginTop: 2, flexShrink: 0 }}>
                   <Icon />
                 </span>
-                <span style={{ fontSize: 12, color: "#666", lineHeight: 1.6 }}>{text}</span>
+                <span style={{ fontSize: 12, color: '#666', lineHeight: 1.6 }}>{text}</span>
               </div>
             ))}
           </div>
-
         </div>
 
-        
+        {/* Bottom Bar */}
         <div
           style={{
-            borderTop: "0.5px solid #e0ddd8",
-            marginTop: "2rem",
-            paddingTop: "1rem",
-            display: "flex",
-            justifyContent: "space-between",
-            flexWrap: "wrap",
+            borderTop: '0.5px solid #e0ddd8',
+            marginTop: '2rem',
+            paddingTop: '1rem',
+            display: 'flex',
+            justifyContent: 'space-between',
+            flexWrap: 'wrap',
             gap: 8,
-            flexDirection: isSmallMobile ? "column" : "row",
-            alignItems: isSmallMobile ? "flex-start" : "center",
+            flexDirection: isSmallMobile ? 'column' : 'row',
+            alignItems: isSmallMobile ? 'flex-start' : 'center',
           }}
         >
-          <p style={{ fontSize: 11, color: "#aaa" }}>
-            © 2024-25 Heal Conscious Inc. All Rights Reserved.
+          <p style={{ fontSize: 14, color: 'gray' }}>
+            © 2025-26 Heal Conscious Inc. All Rights Reserved.
           </p>
-          <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
-            <img src={paymentImg} alt="Payment Method" style={{ width: "60px", height: "auto" }} />
+          <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
+            <img src={paymentImg} alt="Payment Method" style={{ width: '120px', height: 'auto' }} />
           </div>
         </div>
-
       </footer>
     </div>
   )

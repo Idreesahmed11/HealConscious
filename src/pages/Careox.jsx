@@ -1,6 +1,6 @@
 import React from 'react';
 
-// === ASSET IMPORTS ===
+
 import LogoSymbol from '../assets/Careox-Connect-Mobile-App-Screens-300x275.png'; 
 import HeroDevicesImage from '../assets/healconscious-carebox-home-banner-row-1-1-2-300x275-DGHTNQbA.webp'; 
 import ZombieBackgroundImage from '../assets/Emotional-Intelligence-EQ-Management-with-Careox-300x225.webp'; 
@@ -33,7 +33,6 @@ const HealConsciousPage = () => {
   return (
     <div className="min-h-screen bg-white text-[#1a1a1a] font-sans">
 
-      {/* ── SECTION 1: WHAT IS CAREOX? ── */}
       <section className="bg-[#f2f2f2] overflow-hidden">
         <div className="container mx-auto px-6 lg:px-20 py-12 lg:py-24">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-16">
@@ -72,10 +71,10 @@ const HealConsciousPage = () => {
         </div>
       </section>
 
-      {/* ── SPACER ── */}
+    
       <div className="py-10" />
 
-      {/* ── SECTION 2: THE THOUGHT PROCESS (Zombie BG) ── */}
+      
       <section className="container mx-auto px-6 lg:px-20">
         <div className="relative w-full rounded-sm overflow-hidden min-h-[400px]">
           <div className="absolute inset-0 z-0">
@@ -98,10 +97,10 @@ const HealConsciousPage = () => {
         </div>
       </section>
 
-      {/* ── SPACER ── */}
+  
       <div className="py-10" />
 
-      {/* ── SECTION 3: THE HISTORY ── */}
+    
       <section className="history-section">
         <h2 className="history-title">The History</h2>
         <div className="history-cards">
@@ -123,10 +122,10 @@ const HealConsciousPage = () => {
         </div>
       </section>
 
-      {/* ── SPACER ── */}
+    
       <div className="py-10" />
 
-      {/* ── SECTION 4: FUTURE BG ── */}
+    
       <section className="container mx-auto px-6 lg:px-20">
         <div className="relative w-full rounded-sm overflow-hidden min-h-[400px]">
           <div className="absolute inset-0 z-0">
@@ -149,20 +148,20 @@ const HealConsciousPage = () => {
         </div>
       </section>
 
-      {/* ── SPACER ── */}
+  
       <div className="py-16 mt-5" />
 
-      {/* ── SECTION 5: THE SOLUTION + CAREOX BOX ── */}
+  
       <section className="py-16 px-4 md:px-10 bg-white mt-10 ml-6 md:ml-16">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-12">
 
-          {/* LEFT: Dono images */}
+          
           <div className="w-full md:w-1/3 flex flex-col gap-6">
             <img src={img1} alt="solution" className="w-full rounded-xl object-cover" />
             <img src={img2} alt="careox box" className="w-full rounded-xl object-cover" />
           </div>
 
-          {/* RIGHT: Text */}
+          
           <div className="w-full md:w-1/2 text-gray-700 flex flex-col justify-center gap-8">
             <div>
               <h2 className="text-2xl md:text-3xl font-bold mb-4">The Solution</h2>
@@ -183,7 +182,6 @@ const HealConsciousPage = () => {
         </div>
       </section>
 
-      {/* ── SECTION 6: WHAT'S IN EACH WEEK ── */}
       <section className="py-16 px-4 md:px-10 bg-white">
         <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
 
@@ -221,7 +219,7 @@ const HealConsciousPage = () => {
 
         </div>
 
-        {/* ── AFTER WEEK 4 ── */}
+      
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-10 mt-16 pt-10 border-t border-gray-100">
           <div className="w-full md:w-1/2">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">What's After Week 4?</h2>
@@ -239,7 +237,7 @@ const HealConsciousPage = () => {
           </div>
         </div>
 
-        {/* ── THE SCIENCE BEHIND CAREOX ── */}
+      
         <div className="max-w-4xl mx-auto text-center mt-20">
           <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-6">
             The science behind Careox
@@ -251,46 +249,45 @@ const HealConsciousPage = () => {
 
       </section>
 
-   {/* ── SECTION: 6 TECHNIQUES GRID ── */}
+   
 <section className="py-16 px-4 md:px-10 bg-white">
   <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-16">
 
-    {/* 1 - Emotional Freedom */}
+  
     <div className="flex flex-col items-center text-center gap-4">
       <img src={emotionalFreedomImg} alt="Emotional Freedom" className="object-cover" style={{ width: '340px', height: '240px' }} />
       <h3 className="text-lg md:text-xl font-bold text-gray-900">Emotional Freedom</h3>
       <p className="text-sm text-gray-600 leading-relaxed">Helps release emotional blocks and create healthier thought patterns, freeing you from old triggers</p>
     </div>
 
-    {/* 2 - Biofeedback */}
+    
     <div className="flex flex-col items-center text-center gap-4">
       <img src={biofeedbackImg} alt="Biofeedback" className="object-cover" style={{ width: '340px', height: '240px' }} />
       <h3 className="text-lg md:text-xl font-bold text-gray-900">Biofeedback</h3>
       <p className="text-sm text-gray-600 leading-relaxed">Tracks your thoughts, feelings, and habits so you can spot patterns and regain balance</p>
     </div>
 
-    {/* 3 - NLP */}
     <div className="flex flex-col items-center text-center gap-4">
       <img src={nlpImg} alt="NLP Neurolinguistic Programming" className="object-cover" style={{ width: '340px', height: '240px' }} />
       <h3 className="text-lg md:text-xl font-bold text-gray-900">NLP (Neurolinguistic Programming)</h3>
       <p className="text-sm text-gray-600 leading-relaxed">Rewires negative self-talk into empowering thoughts, boosting confidence and resilience.</p>
     </div>
 
-    {/* 4 - Time Management */}
+    
     <div className="flex flex-col items-center text-center gap-4">
       <img src={timeManagementImg} alt="Time Management" className="object-cover" style={{ width: '340px', height: '240px' }} />
       <h3 className="text-lg md:text-xl font-bold text-gray-900">Time Management</h3>
       <p className="text-sm text-gray-600 leading-relaxed">Builds structure and balance in your day, reducing stress while improving focus and productivity.</p>
     </div>
 
-    {/* 5 - Emotional Quotient */}
+    
     <div className="flex flex-col items-center text-center gap-4">
       <img src={eqManagementImg} alt="Emotional Quotient EQ Management" className="object-cover" style={{ width: '340px', height: '240px' }} />
       <h3 className="text-lg md:text-xl font-bold text-gray-900">Emotional Quotient (EQ) Management</h3>
       <p className="text-sm text-gray-600 leading-relaxed">Strengthens self-awareness, empathy, and emotional control for healthier relationships.</p>
     </div>
 
-    {/* 6 - Somatic Experiencing */}
+  
     <div className="flex flex-col items-center text-center gap-4">
       <img src={somaticImg} alt="Somatic Experiencing" className="object-cover" style={{ width: '340px', height: '240px' }} />
       <h3 className="text-lg md:text-xl font-bold text-gray-900">Somatic Experiencing</h3>
@@ -299,11 +296,11 @@ const HealConsciousPage = () => {
 
   </div>
   
-  {/* ── SECTION: 6 MORE TECHNIQUES GRID ── */}
+
 <section className="py-16 px-4 md:px-10 bg-white">
   <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-16">
 
-    {/* 1 - Yoga */}
+
     <div className="flex flex-col items-center text-center gap-4">
       <img src={yogaImg} alt="Yoga" className="object-cover" style={{ width: '340px', height: '240px' }} />
       <h3 className="text-lg md:text-xl font-bold text-gray-900">Yoga</h3>
@@ -312,7 +309,7 @@ const HealConsciousPage = () => {
       </p>
     </div>
 
-    {/* 2 - Sports Psychology */}
+
     <div className="flex flex-col items-center text-center gap-4">
       <img src={sportsPsychologyImg} alt="Sports Psychology" className="object-cover" style={{ width: '340px', height: '240px' }} />
       <h3 className="text-lg md:text-xl font-bold text-gray-900">Sports Psychology</h3>
@@ -321,7 +318,6 @@ const HealConsciousPage = () => {
       </p>
     </div>
 
-    {/* 3 - Spiritual Psychology */}
     <div className="flex flex-col items-center text-center gap-4">
       <img src={spiritualPsychologyImg} alt="Spiritual Psychology" className="object-cover" style={{ width: '340px', height: '240px' }} />
       <h3 className="text-lg md:text-xl font-bold text-gray-900">Spiritual Psychology</h3>
@@ -330,7 +326,7 @@ const HealConsciousPage = () => {
       </p>
     </div>
 
-    {/* 4 - Spiritual Tapping */}
+    
     <div className="flex flex-col items-center text-center gap-4">
       <img src={spiritualTappingImg} alt="Spiritual Tapping EFT" className="object-cover" style={{ width: '340px', height: '240px' }} />
       <h3 className="text-lg md:text-xl font-bold text-gray-900">Spiritual Tapping (EFT)</h3>
@@ -339,7 +335,7 @@ const HealConsciousPage = () => {
       </p>
     </div>
 
-    {/* 5 - Japanese Life Psychology */}
+  
     <div className="flex flex-col items-center text-center gap-4">
       <img src={japanesePsychologyImg} alt="Japanese Life Psychology" className="object-cover" style={{ width: '340px', height: '240px' }} />
       <h3 className="text-lg md:text-xl font-bold text-gray-900">Japanese Life Psychology</h3>
@@ -348,7 +344,7 @@ const HealConsciousPage = () => {
       </p>
     </div>
 
-    {/* 6 - Practical CBT Tools */}
+    
     <div className="flex flex-col items-center text-center gap-4">
       <img src={cbtToolsImg} alt="Practical CBT Tools" className="object-cover" style={{ width: '340px', height: '240px' }} />
       <h3 className="text-lg md:text-xl font-bold text-gray-900">Practical CBT Tools</h3>
