@@ -249,7 +249,7 @@ export default function HealConsciousSection() {
         <div
           style={{
             display: "grid",
-            // On tablet/mobile: CTA goes below cards (1fr), on desktop: side by side
+            
             gridTemplateColumns: isTablet ? "1fr" : "1fr auto",
             gap: "1.5rem",
             alignItems: "start",

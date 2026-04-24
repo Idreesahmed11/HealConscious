@@ -36,7 +36,7 @@ const communityPhotos = [
 
 const navTabs = ["Stream", "About", "Blog", "Followers", "Groups", "Photos", "Files", "Events"];
 
-// ─── Icons ───────────────────────────────────────────────────────────────────
+
 
 const ShareIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -84,41 +84,63 @@ const EyeOffIcon = () => (
   </svg>
 );
 
+
+
 function LoginForm({ compact = false }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [showPassword, setShowPassword] = useState(false);
+  const [showPassword, setShowPassword] = useState(true);
   const [rememberMe, setRememberMe] = useState(false);
 
   return (
     <div>
-      <div className={`flex flex-col sm:flex-row gap-3 mb-3`}>
-       <input
-  type="text"
-  placeholder="UserName or Email"
-  value={username}
-  onChange={e => setUsername(e.target.value)}
-  autoComplete="off"
-  className="w-full border border-gray-200 rounded-xl pl-9 pr-4 py-2.5 text-sm focus:border-blue-400 focus:ring-2 focus:ring-blue-50 outline-none transition-all bg-white text-gray-800 placeholder-gray-400"
-/>
+      
+      <div className={`flex flex-col sm:flex-row gap-3 mb-3 ${compact ? "" : ""}`}>
+        {/* Username */}
+        <div className="relative flex-1">
+          <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none">
+            <UserIcon />
+          </span>
+          <input
+            type="text"
+            placeholder="Username or Email"
+            value={username}
+            onChange={e => setUsername(e.target.value)}
+            autoComplete="new-password"
+            className="w-full border border-gray-200 rounded-xl pl-9 pr-4 py-2.5 text-sm focus:border-blue-400 focus:ring-2 focus:ring-blue-50 outline-none transition-all bg-white text-gray-800 placeholder-gray-400"
+          />
+        </div>
+
+    
+        <div className="relative flex-1">
+          <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none">
+            <KeyIcon />
+          </span>
+          <input
+            type={showPassword ? "text" : "password"}
+            placeholder="Password"
+            value={password}
+            onChange={e => setPassword(e.target.value)}
+            autoComplete="new-password"
+            className="w-full border border-gray-200 rounded-xl pl-9 pr-10 py-2.5 text-sm focus:border-blue-400 focus:ring-2 focus:ring-blue-50 outline-none transition-all bg-white text-gray-800 placeholder-gray-400"
+          />
+          <button
+            type="button"
+            onClick={() => setShowPassword(!showPassword)}
+            className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors"
+            tabIndex={-1}
+          >
+            {showPassword ? <EyeOffIcon /> : <EyeOpenIcon />}
+          </button>
+        </div>
 
       
-       <input
-  type={showPassword ? "text" : "password"}
-  placeholder="Password"
-  value={password}
-  onChange={e => setPassword(e.target.value)}
-  autoComplete="new-password"
-  className="w-full border border-gray-200 rounded-xl pl-9 pr-10 py-2.5 text-sm focus:border-blue-400 focus:ring-2 focus:ring-blue-50 outline-none transition-all bg-white text-gray-800 placeholder-gray-400"
-/>
-
-        
-        <button className="bg-[#4a6cf7] hover:bg-[#3b5de7] active:scale-95 text-white font-bold px-8 py-2.5 rounded-xl transition-all shadow-md text-sm whitespace-nowrap flex-shrink-0">
-          Login
-        </button>
+      <button className="bg-[#4a6cf7] hover:bg-[#3b5de7] active:scale-95 text-white font-bold px-5 py-2 rounded-lg transition-all shadow-md text-sm whitespace-nowrap flex-shrink-0">
+  Login
+</button>
       </div>
 
-
+  
       <div className="flex items-center justify-between px-1">
         <label className="flex items-center gap-2 cursor-pointer select-none">
           <input
@@ -138,7 +160,6 @@ function LoginForm({ compact = false }) {
     </div>
   );
 }
-
 
 
 function Footer() {
@@ -195,7 +216,6 @@ function MemberAvatar({ member, onClick }) {
       {member.initials}
     </div>
   );
-}
 
 
 function MemberModal({ member, onClose }) {
@@ -243,7 +263,6 @@ function MemberModal({ member, onClose }) {
 }
 
 
-
 function Lightbox({ index, onClose, onNav }) {
   if (index === null) return null;
   const photo = communityPhotos[index];
@@ -276,7 +295,7 @@ function ArticleBottomSection({ onBack }) {
   return (
     <div className="mt-10 border-t border-gray-200 pt-8">
 
-  
+      {/* Author */}
       <div className="mb-4">
         <div className="flex items-center gap-2 mb-1">
           <div className="w-7 h-7 rounded-full overflow-hidden bg-gray-200 flex-shrink-0">
@@ -303,7 +322,7 @@ function ArticleBottomSection({ onBack }) {
 
       <h2 className="text-xl font-bold text-gray-900 mb-4">Share Your Thoughts</h2>
 
-
+      {/* Connect Banner */}
       <div className="rounded-xl overflow-hidden shadow-md relative mb-6">
         <div className="w-full relative overflow-hidden">
           <img src={connectBannerSilver} alt="Connect Banner" className="w-full h-full object-cover" />
@@ -320,17 +339,17 @@ function ArticleBottomSection({ onBack }) {
         </div>
       </div>
 
-      
+    
       <div className="mb-2">
         <LoginForm compact />
       </div>
 
+    
       <div className="mt-8 border-t border-gray-100 pt-6">
         <h3 className="text-sm font-semibold text-gray-800 mb-3">Comments</h3>
         <p className="text-sm text-gray-400">No comments yet</p>
       </div>
 
-    
       <div className="mt-8 border-t border-gray-100 pt-6">
         <button
           onClick={onBack}
@@ -667,10 +686,10 @@ export default function ConnectPage() {
             </div>
           </aside>
 
-          
+      
           <main className="flex-1 flex flex-col gap-6">
 
-          
+      
             <div className="rounded-2xl overflow-hidden shadow-md relative group">
               <div className="w-full relative overflow-hidden h-[200px] sm:h-[300px]">
                 <img src={connectBannerSilver} alt="Connect Banner" className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" />
@@ -687,12 +706,12 @@ export default function ConnectPage() {
               </div>
             </div>
 
-            
+        
             <div className="bg-white rounded-2xl shadow-sm p-4">
               <LoginForm />
             </div>
 
-        
+      
             <section className="w-full flex justify-center items-center">
               <div className="w-full bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden">
                 <div className="p-4 md:p-5 flex items-start gap-4">
@@ -725,7 +744,7 @@ export default function ConnectPage() {
               </div>
             </section>
 
-  
+        
             <section className="w-full flex justify-center items-center">
               <div className="w-full bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden">
                 <div className="p-4 md:p-5 flex items-start gap-4">
@@ -803,7 +822,7 @@ export default function ConnectPage() {
               </div>
             </section>
 
-          
+  
             <section className="w-full">
               <div className="bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden">
                 <div className="p-4 md:p-5 flex items-start gap-4">
@@ -893,7 +912,7 @@ export default function ConnectPage() {
               </div>
             </section>
 
-  
+      
             <section className="w-full flex justify-center items-center">
               <div className="w-full bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden">
                 <div className="p-4 md:p-5 flex items-start gap-4">
@@ -926,7 +945,7 @@ export default function ConnectPage() {
               </div>
             </section>
 
-          
+      
             <section className="w-full flex justify-center items-center">
               <div className="w-full bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden">
                 <div className="p-4 md:p-5 flex items-start gap-4">
@@ -959,7 +978,7 @@ export default function ConnectPage() {
               </div>
             </section>
 
-    
+      
             <section className="w-full">
               <div className="bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden">
                 <div className="p-4 md:p-5 flex items-start gap-4">
@@ -1003,7 +1022,7 @@ export default function ConnectPage() {
 
           </main>
 
-        
+          
           <aside className="w-full lg:w-[240px] flex flex-col gap-6">
             <div className="bg-white rounded-2xl shadow-sm p-5">
               <h6 className="font-bold text-gray-800 text-sm mb-2">Community Photos</h6>
