@@ -5,7 +5,6 @@ const WhyCareox = () => {
   return (
     <section className="why-careox">
 
-      
       <div className="container">
 
         <p className="sub-heading">
@@ -44,10 +43,8 @@ const WhyCareox = () => {
 
         </div>
 
-      
         <div className="divider"></div>
 
-        
         <h2 className="main-heading">What is in Careox ?</h2>
 
         <p className="desc-center">
@@ -68,12 +65,12 @@ const WhyCareox = () => {
 
           <div className="why-item">
             <h3>Week 3. Conscious Reform</h3>
-            <p>Now that you understand, it’s time to rebuild.</p>
+            <p>Now that you understand, it's time to rebuild.</p>
           </div>
 
           <div className="why-item">
             <h3>Week 4. Conscious Cultivate</h3>
-            <p>You’ve come far. Anchor your growth in routines that last.</p>
+            <p>You've come far. Anchor your growth in routines that last.</p>
           </div>
 
         </div>

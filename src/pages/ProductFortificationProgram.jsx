@@ -1,8 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import journalImg from "../assets/careox-mental-health-guide-program.png";
 
-
-
 const StarIcon = ({ filled }) => (
   <svg className={`w-4 h-4 ${filled ? "text-gray-400" : "text-gray-300"}`} fill="currentColor" viewBox="0 0 20 20">
     <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
@@ -33,12 +31,11 @@ const TruckIcon = () => (
   </svg>
 );
 
-
 const shippingContent = `We ship worldwide. Shipping times vary by location:
 
-• Pakistan: 3–7 business days
-• Asia: 7–14 business days
-• Rest of the World: 14–25 business days
+- Pakistan: 3–7 business days
+- Asia: 7–14 business days
+- Rest of the World: 14–25 business days
 
 All orders are processed within 1–2 business days. You will receive a tracking number via email once your order has shipped.
 
@@ -46,9 +43,9 @@ Free shipping on orders over $75.`;
 
 const refundContent = `We want you to be completely satisfied with your purchase.
 
-• Returns accepted within 30 days of delivery
-• Item must be unused and in original condition
-• Contact us at support@healconscious.com to initiate a return
+- Returns accepted within 30 days of delivery
+- Item must be unused and in original condition
+- Contact us at support@healconscious.com to initiate a return
 
 Refunds are processed within 5–7 business days after we receive the returned item. Exchanges are subject to stock availability.`;
 
@@ -103,7 +100,6 @@ const PolicyModal = ({ title, content, onClose }) => {
   );
 };
 
-
 const GooglePayModal = ({ onClose }) => {
   const [cardNumber, setCardNumber] = useState("");
   const [expiry, setExpiry] = useState("");
@@ -155,7 +151,6 @@ const GooglePayModal = ({ onClose }) => {
         className="bg-white w-full max-w-sm rounded-lg shadow-2xl overflow-hidden flex flex-col"
         style={{ maxHeight: "90vh" }}
       >
-        
         <div className="flex items-center justify-between px-4 py-3 border-b border-gray-200 bg-white sticky top-0 z-10 flex-shrink-0">
           <div className="flex items-center gap-2">
             <svg className="w-3.5 h-3.5 text-gray-500" fill="currentColor" viewBox="0 0 20 20">
@@ -170,7 +165,6 @@ const GooglePayModal = ({ onClose }) => {
           </button>
         </div>
 
-    
         <div className="overflow-y-auto flex-1 px-5 py-5">
           <div className="flex items-center gap-3 mb-5">
             <button onClick={onClose} className="text-gray-600 hover:text-gray-900 transition-colors p-1">
@@ -408,7 +402,6 @@ export default function CareoxProduct() {
       {showShipping && <PolicyModal title="Shipping Policy" content={shippingContent} onClose={() => setShowShipping(false)} />}
       {showRefund && <PolicyModal title="Refund & Exchange Policy" content={refundContent} onClose={() => setShowRefund(false)} />}
 
-      
       <div className="max-w-6xl mx-auto px-4 sm:px-8 pt-5 pb-2">
         <nav className="text-xs text-gray-400 flex flex-wrap gap-1 items-center">
           <a href="#" className="hover:text-gray-600 transition-colors">Home</a>
@@ -419,19 +412,15 @@ export default function CareoxProduct() {
         </nav>
       </div>
 
-      
       <div className="max-w-6xl mx-auto px-4 sm:px-8 py-6">
         <div className="flex flex-col lg:flex-row gap-10 lg:gap-14">
 
-        
           <div className="w-full lg:w-[46%]">
             <div className="rounded-2xl overflow-hidden border border-gray-100 shadow-md bg-stone-50" style={{ aspectRatio: "4/3" }}>
               <img src={journalImg} alt="Careox Mental Health Journal" className="w-full h-full object-cover" />
             </div>
-            
           </div>
 
-  
           <div className="w-full lg:flex-1 flex flex-col">
             <div className="flex items-center gap-1.5 mb-3">
               {[1,2,3,4,5].map((s) => <StarIcon key={s} filled />)}
@@ -444,14 +433,12 @@ export default function CareoxProduct() {
 
             <div className="flex items-baseline gap-3 mb-4">
               <span className="text-3xl font-bold text-gray-900">$199.00</span>
-      
             </div>
 
             <p className="text-sm text-gray-500 leading-relaxed mb-3">
               Our self-help mental health guide is carefully curated and crafted by revered psychologist in their niche, and personal coaching and healing. The thematic guide is meant to help you through redefining yourself, in the reflection of who you truly are, helping you reach into the subconscious corners of mind.
             </p>
 
-          
             <p className="text-sm text-gray-500 italic mb-1">
               Shipping takes from 3 to 25 days depending on your location
             </p>
@@ -476,8 +463,6 @@ export default function CareoxProduct() {
               before you make the purchase.
             </p>
 
-
-      
             <div className="flex items-center gap-3 mb-3">
               <div className="flex items-center border border-gray-300 rounded-lg overflow-hidden">
                 <button onClick={() => setQty((q) => Math.max(1, q - 1))} className="w-9 h-11 text-gray-500 hover:bg-gray-100 transition-colors text-lg font-light">−</button>
@@ -496,7 +481,6 @@ export default function CareoxProduct() {
               BUY IT NOW
             </button>
 
-      
             <div className="flex gap-3 mb-5">
               <button
                 onClick={() => setShowGPay(true)}
@@ -528,12 +512,10 @@ export default function CareoxProduct() {
               {wishlist ? "Added to wishlist" : "Add to wishlist"}
             </button>
 
-          
           </div>
         </div>
       </div>
 
-      {/* Tabs */}
       <section className="w-full border-t border-gray-100 mt-4">
         <div className="max-w-6xl mx-auto px-4 sm:px-8">
           <div className="flex border-b border-gray-200">
@@ -554,11 +536,9 @@ export default function CareoxProduct() {
             {activeTab === "description" ? (
               <div className="space-y-5 max-w-3xl">
                 <p>
-            The Careox: Mental Healthcare in a Box’ is a guided self-help program designed by experts to help you rewire thought patterns, release emotional blocks, and rediscover your best self.
+                  The Careox: Mental Healthcare in a Box' is a guided self-help program designed by experts to help you rewire thought patterns, release emotional blocks, and rediscover your best self.
                 </p>
-                <h6>
-                  Product Description
-                </h6>
+                <h6>Product Description</h6>
                 <p>Careox is a 28-day mental healthcare guide designed to help you release buried pain, ease daily stress, and break free from social pressures. Curated by psychologists and expert coaches, it blends reflection, healing practices, and practical exercises. The guide helps you reconnect with your true self, access the subconscious mind, and move forward with clarity and strength.</p>
                 <div>
                   <h4 className="font-bold mb-4 text-gray-900 text-base">Key Features:</h4>
@@ -568,7 +548,7 @@ export default function CareoxProduct() {
                       ["Expertly Curated: Crafted by experienced psychologists and coaches specializing in mental health and personal development."],
                       [" Holistic Healing Approach: Supports emotional freedom, mental clarity, and a healthier mindset."],
                       ["Perfect Gift for Loved Ones: Thoughtful and meaningful present for anyone seeking self-discovery and better mental wellness."],
-                      [ " Portable & Easy to Use: Designed for daily use at home, in therapy, or as part of your personal growth journey."],
+                      [" Portable & Easy to Use: Designed for daily use at home, in therapy, or as part of your personal growth journey."],
                     ].map(([title, desc]) => (
                       <li key={title} className="flex gap-3">
                         <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-400 flex-shrink-0" />
@@ -581,7 +561,7 @@ export default function CareoxProduct() {
             ) : (
               <div className="max-w-2xl">
                 <p className="text-gray-600 mb-8">There are no reviews yet.</p><br />
-                <h6>Be the first to review “Careox | 4 week mental health fortification program”</h6>
+                <h6>Be the first to review "Careox | 4 week mental health fortification program"</h6>
                 <br /><br />
                 <div className="border border-gray-200 rounded-xl p-6 md:p-8">
                   <p className="text-base font-semibold text-gray-900 mb-6">Your email address will not be published. Required fields are marked *</p>
@@ -612,8 +592,6 @@ export default function CareoxProduct() {
         </div>
       </section>
 
-    
-   
     </div>
   );
 }

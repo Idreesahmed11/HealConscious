@@ -12,8 +12,6 @@ const HeroSection = () => {
           background: #ebebeb;
           width: 100%;
           overflow: hidden;
-          
-          
         }
 
         .hero-inner {
@@ -42,7 +40,6 @@ const HeroSection = () => {
           color: #0b102c;
           text-transform: uppercase;
           margin-bottom: 6px;
-  
           white-space: nowrap;
         }
 
@@ -87,7 +84,6 @@ const HeroSection = () => {
           position: absolute;
           bottom: 14px;
           left: 50%;
-          
           width: 38px;
           height: 3px;
           border-radius: 2px;
@@ -95,12 +91,7 @@ const HeroSection = () => {
           opacity: 0.55;
         }
 
-        /* ── MOBILE ── */
         @media (max-width: 640px) {
-          .hero-section {
-            
-          }
-
           .hero-inner {
             flex-direction: row;
             align-items: center;
@@ -117,7 +108,6 @@ const HeroSection = () => {
           .hero-label {
             font-size: 9px;
             letter-spacing: 0.15em;
-            
             white-space: nowrap;
           }
 
@@ -150,14 +140,12 @@ const HeroSection = () => {
 
       <section className="hero-section">
 
-      
         <svg className="hero-arrow" style={{ position:"absolute", top:"8%", right:"30%", width:"150px", opacity:0.3, pointerEvents:"none" }}
           viewBox="0 0 180 100" fill="none">
           <path d="M10 85 Q70 5 165 18" stroke="#666" strokeWidth="3" strokeLinecap="round"/>
           <path d="M152 8 L167 20 L153 32" stroke="#666" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
         </svg>
 
-        
         <svg className="hero-arrow" style={{ position:"absolute", bottom:"8%", right:"25%", width:"150px", opacity:0.3, pointerEvents:"none" }}
           viewBox="0 0 180 100" fill="none">
           <path d="M165 15 Q100 75 15 85" stroke="#666" strokeWidth="3" strokeLinecap="round"/>
@@ -166,7 +154,6 @@ const HeroSection = () => {
 
         <div className="hero-inner">
 
-          
           <div className="hero-text">
             <p className="hero-label">Heal Conscious</p>
             <h1 className="hero-heading">CAREOX – CONNECT</h1>
@@ -176,7 +163,6 @@ const HeroSection = () => {
             </p>
           </div>
 
-          
           <div className="hero-image-wrap">
             <img src={heroImage} alt="Careox Connect" />
           </div>

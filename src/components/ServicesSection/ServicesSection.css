@@ -1,4 +1,4 @@
-.services-wrapper {
+/* .services-wrapper {
   padding: 60px 80px;
   background-color: white;
 }
@@ -86,6 +86,113 @@
   .service-item:nth-child(12)                         { order: 5; }
 
   
+  .services-grid {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px 16px;
+  }
+
+  .service-item {
+    width: 90px;
+  }
+
+  .service-circle {
+    width: 90px;
+    height: 90px;
+  }
+
+  .service-label {
+    font-size: 12px;
+  }
+} */.services-wrapper {
+  padding: 60px 80px;
+  background-color: white;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* laptop: 6 columns */
+  gap: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.service-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.service-item:hover {
+  transform: translateY(-4px);
+}
+
+.service-circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: 14px;
+}
+
+.service-circle img {
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+}
+
+.service-label {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+  color: #222;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Mobile: pyramid layout */
+@media (max-width: 768px) {
+  .services-wrapper {
+    padding: 40px 20px;
+  }
+
+  .services-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+  }
+
+  /* har row manually */
+  .service-item:nth-child(1)                          { order: 1; }
+  .service-item:nth-child(2),
+  .service-item:nth-child(3)                          { order: 2; }
+  .service-item:nth-child(4),
+  .service-item:nth-child(5),
+  .service-item:nth-child(6)                          { order: 3; }
+  .service-item:nth-child(7),
+  .service-item:nth-child(8),
+  .service-item:nth-child(9)                          { order: 4; }
+  .service-item:nth-child(10),
+  .service-item:nth-child(11),
+  .service-item:nth-child(12)                         { order: 5; }
+
+  /* flex mein wrap karein rows */
   .services-grid {
     flex-direction: row;
     flex-wrap: wrap;

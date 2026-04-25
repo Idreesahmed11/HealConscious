@@ -1,19 +1,45 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./MainNavbar.css";
 import logo from "../../assets/Heal-Conscious-Logo-black.png";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { IoSearchSharp } from "react-icons/io5";
 import { IoIosArrowDown } from "react-icons/io";
 import { RiMenu3Line, RiCloseLine } from "react-icons/ri";
 
 function MainNavbar() {
   const [open, setOpen] = useState(false);
+  const [connectOpen, setConnectOpen] = useState(false);
+  const [profileOpen, setProfileOpen] = useState(false);
+  const connectRef = useRef(null);
+  const location = useLocation();
+
+
+  const isConnectPage =
+  location.pathname === "/connect" ||
+  location.pathname === "/Connect" ||
+  location.pathname === "/";
+  useEffect(() => {
+    function handleClickOutside(e) {
+      if (connectRef.current && !connectRef.current.contains(e.target)) {
+        setConnectOpen(false);
+        setProfileOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  useEffect(() => {
+    setConnectOpen(false);
+    setProfileOpen(false);
+    setOpen(false);
+  }, [location.pathname]);
 
   return (
     <div className="main-navbar">
       <div className="nav-container">
         <div className="logo">
-          <Link to="/">
+          <Link to="/home">
             <img src={logo} alt="logo" />
           </Link>
         </div>
@@ -26,19 +52,100 @@ function MainNavbar() {
         </button>
 
         <ul className={`nav-menu ${open ? "active" : ""}`}>
-          <li><Link to="/" onClick={() => setOpen(false)}>HOME</Link></li>
+
+        
           <li>
-            <Link to="/careox" onClick={() => setOpen(false)}>
-              WHAT IS CAREOX <IoIosArrowDown />
-            </Link>
+            <Link to="/home" onClick={() => setOpen(false)}>HOME</Link>
           </li>
-          <li><Link to="/connect" onClick={() => setOpen(false)}>CONNECT</Link></li>
-          <li><Link to="/store" onClick={() => setOpen(false)}>STORE</Link></li>
+
+          
+          {isConnectPage ? (
+            <li className="nav-dropdown-wrapper" ref={connectRef}>
+              <button
+                className="nav-dropdown-trigger"
+                onMouseEnter={() => setConnectOpen(true)}
+                onClick={() => setConnectOpen(!connectOpen)}
+              >
+                CONNECT{" "}
+                <IoIosArrowDown className={`arrow-icon ${connectOpen ? "rotated" : ""}`} />
+              </button>
+
+              {connectOpen && (
+                <ul
+                  className="nav-dropdown-menu"
+                  onMouseLeave={() => { setConnectOpen(false); setProfileOpen(false); }}
+                >
+                  <li className="dropdown-item">
+                    <Link to="/connect" onClick={() => { setOpen(false); setConnectOpen(false); }}>
+                      Ask An Expert
+                    </Link>
+                  </li>
+                  <li className="dropdown-item">
+                    <Link to="/connect" onClick={() => { setOpen(false); setConnectOpen(false); }}>
+                      Members
+                    </Link>
+                  </li>
+                  <li
+                    className="dropdown-item has-sub"
+                    onMouseEnter={() => setProfileOpen(true)}
+                    onMouseLeave={() => setProfileOpen(false)}
+                  >
+                    <span className="sub-trigger">
+                      Profile
+                      <IoIosArrowDown className="sub-arrow" />
+                    </span>
+                    {profileOpen && (
+                      <ul className="nav-sub-menu">
+                        <li>
+                          <Link to="/connect" onClick={() => { setOpen(false); setConnectOpen(false); setProfileOpen(false); }}>
+                            View Profile
+                          </Link>
+                        </li>
+                        <li>
+                          <Link to="/connect" onClick={() => { setOpen(false); setConnectOpen(false); setProfileOpen(false); }}>
+                            Edit Profile
+                          </Link>
+                        </li>
+                      </ul>
+                    )}
+                  </li>
+                </ul>
+              )}
+            </li>
+          ) : (
+            <li>
+              <Link to="/connect" onClick={() => setOpen(false)}>CONNECT</Link>
+            </li>
+          )}
+
+          
+          <li>
+            <Link to="/store" onClick={() => setOpen(false)}>STORE</Link>
+          </li>
+
+        
           <li>
             <Link to="/about" onClick={() => setOpen(false)}>
               WHO ARE YOU <IoIosArrowDown /> <IoSearchSharp />
             </Link>
           </li>
+
+        
+          <li>
+            <Link to="/careox" onClick={() => setOpen(false)}>
+              WHAT IS CAREOX <IoIosArrowDown />
+            </Link>
+          </li>
+
+        
+          {/* {isConnectPage && (
+            // <li>
+            //   <Link to="/where-we-are" onClick={() => setOpen(false)}>
+            //     WHERE WE ARE?
+            //   </Link>
+            // </li>
+          )} */}
+
         </ul>
       </div>
     </div>
