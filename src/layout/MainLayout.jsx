@@ -1,8 +1,8 @@
-// MainLayout.jsx
+
 import { Outlet } from "react-router-dom";
 import TopBar from "../components/Navbar/TopBar";
 import MainNavbar from "../components/Navbar/MainNavbar";
-import Footer from "../components/Footer"; // ✅ Footer import karo
+import Footer from "../components/Footer"; 
 import ScrollToTop from "../components/ScrollToTop";
 
 const MainLayout = () => {
@@ -13,10 +13,10 @@ const MainLayout = () => {
       <MainNavbar />
 
       <main style={{ flex: 1 }}>
-        <Outlet /> {/* Har page yahan render hoga */}
+        <Outlet /> 
       </main>
 
-      {/* ✅ Footer — automatically har page ke neeche */}
+      
       <Footer
         companyName="Careox"
         bgColor="#1a1a2e"

@@ -5,7 +5,7 @@ const WhyCareox = () => {
   return (
     <section className="why-careox">
 
-      {/* Top Section */}
+      
       <div className="container">
 
         <p className="sub-heading">
@@ -44,10 +44,10 @@ const WhyCareox = () => {
 
         </div>
 
-        {/* Divider */}
+      
         <div className="divider"></div>
 
-        {/* Bottom Section */}
+        
         <h2 className="main-heading">What is in Careox ?</h2>
 
         <p className="desc-center">

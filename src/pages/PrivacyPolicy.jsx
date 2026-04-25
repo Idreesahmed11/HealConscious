@@ -7,7 +7,7 @@ const PrivacyPolicyPage = () => {
   return (
     <div className="w-full min-h-screen bg-white font-sans">
       
-      {/* --- HEADER SECTION --- */}
+    
       <header className="w-full bg-[#E5E5E5] overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 md:px-16 lg:px-24 flex flex-col md:flex-row items-center justify-between h-auto md:h-[280px] py-8 md:py-0">
           

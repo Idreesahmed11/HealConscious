@@ -115,7 +115,7 @@ const EmotionalIntelligence = () => {
             </h1>
           </div>
 
-          {/* ✅ SIRF YAHAN CHANGE: max-h-[180px] lg:max-h-[200px] add kiya */}
+        
           <div className="w-full lg:w-auto flex justify-center lg:justify-end items-center lg:max-w-[55%]">
             <img
               src={heroImage}

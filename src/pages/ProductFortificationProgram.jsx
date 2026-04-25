@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import journalImg from "../assets/careox-mental-health-guide-program.png";
 
 
-// ── Icons ────────────────────────────────────────────────────────────────────
+
 const StarIcon = ({ filled }) => (
   <svg className={`w-4 h-4 ${filled ? "text-gray-400" : "text-gray-300"}`} fill="currentColor" viewBox="0 0 20 20">
     <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
@@ -33,7 +33,7 @@ const TruckIcon = () => (
   </svg>
 );
 
-// ── Policy Content ────────────────────────────────────────────────────────────
+
 const shippingContent = `We ship worldwide. Shipping times vary by location:
 
 • Pakistan: 3–7 business days
@@ -52,7 +52,6 @@ const refundContent = `We want you to be completely satisfied with your purchase
 
 Refunds are processed within 5–7 business days after we receive the returned item. Exchanges are subject to stock availability.`;
 
-// ── Policy Modal ──────────────────────────────────────────────────────────────
 const PolicyModal = ({ title, content, onClose }) => {
   const modalRef = useRef(null);
 
@@ -104,7 +103,7 @@ const PolicyModal = ({ title, content, onClose }) => {
   );
 };
 
-// ── Google Pay Modal ──────────────────────────────────────────────────────────
+
 const GooglePayModal = ({ onClose }) => {
   const [cardNumber, setCardNumber] = useState("");
   const [expiry, setExpiry] = useState("");
@@ -156,7 +155,7 @@ const GooglePayModal = ({ onClose }) => {
         className="bg-white w-full max-w-sm rounded-lg shadow-2xl overflow-hidden flex flex-col"
         style={{ maxHeight: "90vh" }}
       >
-        {/* Top bar */}
+        
         <div className="flex items-center justify-between px-4 py-3 border-b border-gray-200 bg-white sticky top-0 z-10 flex-shrink-0">
           <div className="flex items-center gap-2">
             <svg className="w-3.5 h-3.5 text-gray-500" fill="currentColor" viewBox="0 0 20 20">
@@ -171,7 +170,7 @@ const GooglePayModal = ({ onClose }) => {
           </button>
         </div>
 
-        {/* Scrollable body */}
+    
         <div className="overflow-y-auto flex-1 px-5 py-5">
           <div className="flex items-center gap-3 mb-5">
             <button onClick={onClose} className="text-gray-600 hover:text-gray-900 transition-colors p-1">
@@ -293,7 +292,6 @@ const GooglePayModal = ({ onClose }) => {
   );
 };
 
-// ── Link Modal ────────────────────────────────────────────────────────────────
 const LinkModal = ({ onClose }) => {
   const [email, setEmail] = useState("");
   const [paying, setPaying] = useState(false);
@@ -386,7 +384,7 @@ const LinkModal = ({ onClose }) => {
   );
 };
 
-// ── Main Component ────────────────────────────────────────────────────────────
+
 export default function CareoxProduct() {
   const [qty, setQty] = useState(1);
   const [wishlist, setWishlist] = useState(false);
@@ -410,7 +408,7 @@ export default function CareoxProduct() {
       {showShipping && <PolicyModal title="Shipping Policy" content={shippingContent} onClose={() => setShowShipping(false)} />}
       {showRefund && <PolicyModal title="Refund & Exchange Policy" content={refundContent} onClose={() => setShowRefund(false)} />}
 
-      {/* Breadcrumb */}
+      
       <div className="max-w-6xl mx-auto px-4 sm:px-8 pt-5 pb-2">
         <nav className="text-xs text-gray-400 flex flex-wrap gap-1 items-center">
           <a href="#" className="hover:text-gray-600 transition-colors">Home</a>
@@ -421,11 +419,11 @@ export default function CareoxProduct() {
         </nav>
       </div>
 
-      {/* Product Section */}
+      
       <div className="max-w-6xl mx-auto px-4 sm:px-8 py-6">
         <div className="flex flex-col lg:flex-row gap-10 lg:gap-14">
 
-          {/* LEFT — Image */}
+        
           <div className="w-full lg:w-[46%]">
             <div className="rounded-2xl overflow-hidden border border-gray-100 shadow-md bg-stone-50" style={{ aspectRatio: "4/3" }}>
               <img src={journalImg} alt="Careox Mental Health Journal" className="w-full h-full object-cover" />
@@ -433,7 +431,7 @@ export default function CareoxProduct() {
             
           </div>
 
-          {/* RIGHT — Info */}
+  
           <div className="w-full lg:flex-1 flex flex-col">
             <div className="flex items-center gap-1.5 mb-3">
               {[1,2,3,4,5].map((s) => <StarIcon key={s} filled />)}
@@ -453,7 +451,7 @@ export default function CareoxProduct() {
               Our self-help mental health guide is carefully curated and crafted by revered psychologist in their niche, and personal coaching and healing. The thematic guide is meant to help you through redefining yourself, in the reflection of who you truly are, helping you reach into the subconscious corners of mind.
             </p>
 
-            {/* Shipping Info */}
+          
             <p className="text-sm text-gray-500 italic mb-1">
               Shipping takes from 3 to 25 days depending on your location
             </p>
@@ -479,7 +477,7 @@ export default function CareoxProduct() {
             </p>
 
 
-            {/* Qty + Add to Cart */}
+      
             <div className="flex items-center gap-3 mb-3">
               <div className="flex items-center border border-gray-300 rounded-lg overflow-hidden">
                 <button onClick={() => setQty((q) => Math.max(1, q - 1))} className="w-9 h-11 text-gray-500 hover:bg-gray-100 transition-colors text-lg font-light">−</button>
@@ -498,7 +496,7 @@ export default function CareoxProduct() {
               BUY IT NOW
             </button>
 
-            {/* Payment Buttons */}
+      
             <div className="flex gap-3 mb-5">
               <button
                 onClick={() => setShowGPay(true)}
@@ -614,7 +612,7 @@ export default function CareoxProduct() {
         </div>
       </section>
 
-      {/* Related Products */}
+    
    
     </div>
   );

@@ -113,27 +113,27 @@ const ExpertSection = () => {
         </div>
       </section>
 
-    
-      <section className="testimonials-section">
-        <h2 className="testimonials-heading">What People Say About Us</h2>
-        <div className="testimonials-grid">
-          <div className="testimonial-card">
-            <video controls>
-              <source src={TestimonialVideo1} type="video/mp4" />
-            </video>
-          </div>
-          <div className="testimonial-card">
-            <video controls>
-              <source src={TestimonialVideo2} type="video/mp4" />
-            </video>
-          </div>
-          <div className="testimonial-card">
-            <video controls>
-              <source src={TestimonialVideo3} type="video/mp4" />
-            </video>
-          </div>
+
+<section className="w-full py-12">
+  <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 text-center mb-8">
+    What People Say About Us
+  </h2>
+  <div className="max-w-4xl mx-auto px-8 sm:px-12 lg:px-16">
+    <div className="grid grid-cols-3 gap-3 sm:gap-4 lg:gap-5">
+      {[TestimonialVideo1, TestimonialVideo2, TestimonialVideo3].map((src, i) => (
+        <div key={i} className="rounded-xl overflow-hidden shadow-md bg-black">
+          <video
+            controls
+            className="w-full object-cover"
+            style={{ height: 'clamp(150px, 30vw, 480px)' }}
+          >
+            <source src={src} type="video/mp4" />
+          </video>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
 
       
 <section className="team-section">

@@ -16,7 +16,7 @@
   margin-bottom: 40px;
 }
 
-/* CARDS CONTAINER */
+
 .history-cards {
   display: flex;
   gap: 30px;
@@ -24,7 +24,6 @@
   flex-wrap: wrap;
 }
 
-/* SINGLE CARD */
 .history-card {
   background: #fff;
   padding: 20px;
@@ -39,27 +38,26 @@
   transform: translateY(-5px);
 }
 
-/* IMAGE */
+
 .history-card img {
   width: 100%;
   border-radius: 10px;
   margin: 15px 0;
 }
 
-/* TITLE */
 .history-card h3 {
   font-size: 20px;
   margin-bottom: 10px;
 }
 
-/* TEXT */
+
 .history-card p {
   font-size: 14px;
   color: #555;
   line-height: 1.6;
 }
 
-/* RESPONSIVE */
+
 @media (max-width: 768px) {
   .history-cards {
     flex-direction: column;

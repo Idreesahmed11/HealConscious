@@ -494,19 +494,7 @@ function ArticlePage2({ onBack }) {
     <div className="min-h-screen bg-[#eef0f5] flex flex-col">
       <div className="flex-1 py-10 px-4">
         <div className="max-w-3xl mx-auto bg-white rounded-2xl shadow-sm p-6 sm:p-8">
-          {/* <button onClick={onBack} className="mb-6 text-sm text-blue-600 hover:underline flex items-center gap-1">
-            ← Back
-          </button> */}
-
-          {/* <div className="flex items-center gap-3 mb-6">
-            <img src={logoImg} alt="Heal Conscious" className="w-12 h-12 rounded-full object-cover" />
-            <div>
-              <p className="font-semibold text-gray-900 flex items-center gap-1 text-sm">
-                Heal Conscious
-              </p>
-              <p className="text-xs text-gray-400">1 year ago</p>
-            </div>
-          </div> */}
+         
 
           <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-5 leading-tight py-1 px-3">
             How to Remain Clear, Calm and Objective When Under Pressure
@@ -696,11 +684,11 @@ export default function ConnectPage() {
   return (
     <div className="min-h-screen bg-[#eef0f5] flex flex-col">
 
-      {/* MAIN CONTENT */}
+      
       <div className="flex-1 flex items-start justify-center py-6 px-4">
         <div className="w-full max-w-[1200px] flex flex-col lg:flex-row gap-6">
 
-          {/* LEFT SIDEBAR */}
+        
           <aside className="hidden lg:block w-[200px] shrink-0">
             <div className="bg-white rounded-xl shadow-sm p-4 sticky top-6">
               <h2 className="font-semibold text-gray-800 text-sm mb-2">Online Members</h2>

@@ -247,7 +247,7 @@ const AboutSection = () => {
           
           <div className="flex flex-col sm:flex-row justify-center items-center gap-12 lg:gap-24">
             
-            {/* Sana Amjad */}
+          
             <div className="flex flex-col items-center">
               <div className="w-44 h-44 rounded-full overflow-hidden mb-5 shadow-md border border-gray-100">
                 <img src={sanaAmjadImg} alt="Sana Amjad" className="w-full h-full object-cover" />

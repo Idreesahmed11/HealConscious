@@ -292,7 +292,7 @@ const GooglePayModal = ({ onClose }) => {
   );
 };
 
-// ── Link Modal ────────────────────────────────────────────────────────────────
+
 const LinkModal = ({ onClose }) => {
   const [email, setEmail] = useState("");
   const [paying, setPaying] = useState(false);

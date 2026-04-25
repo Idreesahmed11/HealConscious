@@ -61,7 +61,7 @@ function Footer() {
             gap: isMobile ? '1.5rem' : '2rem',
           }}
         >
-          {/* Newsletter */}
+        
           <div>
             <p style={{ fontSize: 13, fontWeight: 700, color: '#111', marginBottom: 4 }}>
               Sign Up For Our Newsletter
@@ -96,7 +96,7 @@ function Footer() {
             </button>
           </div>
 
-          {/* Quick Links */}
+          
           <div>
             <p style={{ fontSize: 13, fontWeight: 700, color: '#111', marginBottom: 14 }}>
               Quick Links
@@ -117,7 +117,7 @@ function Footer() {
             </ul>
           </div>
 
-          {/* Policies */}
+    
           <div>
             <p style={{ fontSize: 13, fontWeight: 700, color: '#111', marginBottom: 14 }}>
               Our Policy
@@ -138,7 +138,7 @@ function Footer() {
             </ul>
           </div>
 
-          {/* Contact */}
+          
           <div>
             <p style={{ fontSize: 13, fontWeight: 700, color: '#111', marginBottom: 14 }}>
               Contact Us
@@ -158,7 +158,7 @@ function Footer() {
           </div>
         </div>
 
-        {/* Bottom Bar */}
+        
         <div
           style={{
             borderTop: '0.5px solid #e0ddd8',

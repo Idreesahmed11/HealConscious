@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import heroImage from "../../src/assets/Transparent-heal-conscious-image.png";
 import cbtImg from "../../src/assets/Practical-CBT-Tools-for-Anxiety-Stress-with-Careox-1-300x225.webp";
 
-// ─── Data ──────────────────────────────────────────────────────────────────
+
 const gains = [
   {
     benefit: 'Freedom from Anxiety',
@@ -72,18 +72,18 @@ const additionalBullets = [
   },
 ];
 
-// ─── Component ─────────────────────────────────────────────────────────────
+
 const CBT = () => {
   const navigate = useNavigate();
 
   return (
     <div className="w-full font-sans antialiased text-gray-800">
 
-      {/* ══ Banner ══════════════════════════════════════════════════════════ */}
+      
       <div className="bg-[#E9E9E9] py-14 lg:py-24 overflow-hidden">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8 flex flex-col lg:flex-row items-center justify-between gap-8">
 
-          {/* Left */}
+      
           <div className="z-10 text-left">
             <div className="flex items-center flex-wrap gap-2 mb-4 text-[12px] font-bold tracking-wide uppercase">
               <button
@@ -100,7 +100,7 @@ const CBT = () => {
             </h1>
           </div>
 
-          {/* Right: Hero image */}
+        
           <div className="w-full lg:w-auto flex justify-center lg:justify-end items-center lg:max-w-[55%]">
             <img
               src={heroImage}
@@ -111,17 +111,17 @@ const CBT = () => {
         </div>
       </div>
 
-      {/* ══ Spacer ══════════════════════════════════════════════════════════ */}
+    
       <div className="h-10 md:h-16 bg-white" />
 
-      {/* ══ Main Content ════════════════════════════════════════════════════ */}
+      
       <div className="w-full bg-white pb-0 px-4 sm:px-6 md:px-8">
         <div className="max-w-[1200px] mx-auto">
 
-          {/* ── Row 1: Are You Stuck? + Image ── */}
+        
           <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 mb-14">
 
-            {/* Left Text */}
+        
             <div className="flex-1">
               <h2 className="text-xl sm:text-2xl font-black text-black mb-4 leading-snug">
                 Are You Stuck in a Loop of Overthinking and Self-Doubt?
