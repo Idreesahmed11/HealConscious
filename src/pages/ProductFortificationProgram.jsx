@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import journalImg from "../assets/careox-mental-health-guide-program.png";
+import { useNavigate } from "react-router-dom";
 
 const StarIcon = ({ filled }) => (
   <svg className={`w-4 h-4 ${filled ? "text-gray-400" : "text-gray-300"}`} fill="currentColor" viewBox="0 0 20 20">
@@ -380,6 +381,7 @@ const LinkModal = ({ onClose }) => {
 
 
 export default function CareoxProduct() {
+    const navigate = useNavigate();
   const [qty, setQty] = useState(1);
   const [wishlist, setWishlist] = useState(false);
   const [added, setAdded] = useState(false);
@@ -477,9 +479,12 @@ export default function CareoxProduct() {
               </button>
             </div>
 
-            <button className="w-full h-11 rounded-lg border-2 border-gray-900 text-sm font-semibold text-gray-900 hover:bg-gray-50 transition-colors mb-4">
-              BUY IT NOW
-            </button>
+           <button
+  onClick={() => navigate("/careox-experience")}
+  className="w-full h-11 rounded-lg border-2 border-gray-900 text-sm font-semibold text-gray-900 hover:bg-gray-50 transition-colors mb-4"
+>
+  BUY IT NOW
+</button>
 
             <div className="flex gap-3 mb-5">
               <button

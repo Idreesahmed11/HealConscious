@@ -32,6 +32,7 @@ import RefundPolicy                from "../pages/RefundPolicy";
 import PrivacyPolicy               from "../pages/PrivacyPolicy";
 import HealingAmbassador           from "../pages/HealingAmbassador";
 import ShippingPolicy              from "../pages/ShippingPolicy";
+import CareoxExperiencePage from "../pages/CareoxExperience";
 
 const AppRoutes = () => {
   return (
@@ -76,6 +77,7 @@ const AppRoutes = () => {
           <Route path="privacy-policy"        element={<PrivacyPolicy />} />
           <Route path="healing-ambassador"    element={<HealingAmbassador />} />
           <Route path="shipping-policy"       element={<ShippingPolicy />} />
+          <Route path="careox-experience" element={<CareoxExperiencePage />} />
         </Route>
       </Routes>
     </BrowserRouter>
